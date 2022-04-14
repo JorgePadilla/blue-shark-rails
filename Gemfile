@@ -73,3 +73,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "sorcery", "~> 0.16.3"
+
+gem "rspec-rails", "~> 5.1"
