@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  get 'register', to: 'user_registration#new'
+  post "register/user", to: 'user_registration#create'
   get 'home/show'
   get 'dashboard', to: 'dashboard#show'
   get 'login' => 'user_sessions#new', :as => :login
   root "home#show"
+  delete 'logout', to: 'user_sessions#destroy', as: :logout
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
