@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'home/show'
   get 'dashboard', to: 'dashboard#show'
   get 'login' => 'user_sessions#new', :as => :login
+  post 'login' => "user_sessions#create"
   root "home#show"
   delete 'logout', to: 'user_sessions#destroy', as: :logout
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

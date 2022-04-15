@@ -7,10 +7,3 @@ application.debug = false
 window.Stimulus   = application
 
 export { application }
-
-$(document).on("turbolinks:load", () => {
-    console.log("turbolinks!");
-  });
-  $(document).on("turbo:load", () => {
-    console.log("turbo!");
-  });
