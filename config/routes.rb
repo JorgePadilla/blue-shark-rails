@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'register', to: 'user_registration#new'
   post "register/user", to: 'user_registration#create'
-  get 'home/show'
   get 'dashboard', to: 'dashboard#show'
   get 'login' => 'user_sessions#new', :as => :login
   post 'login' => "user_sessions#create"
