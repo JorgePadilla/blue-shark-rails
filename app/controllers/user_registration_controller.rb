@@ -1,13 +1,13 @@
 class UserRegistrationController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
-
+  
   def new
     @user = User.new
   end
 
   def create
     @user = User.new(user_params)
-    @user.profile = Patient.new(email: user_params[:email])
+    @user.profile = Patient.new
     if @user.save
       auto_login(@user)
       redirect_to dashboard_path, notice: "You successfully register"
