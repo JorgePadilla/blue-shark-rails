@@ -91,5 +91,5 @@ production:
   username: turgnctqvqmirh
   password: af1b3195bd94ec89f09164e2094507173fdee0d41ca82191e460374ed6d6207b
   host: ec2-34-207-12-160.compute-1.amazonaws.com
-  poert: 5432
+  port: 5432
 
