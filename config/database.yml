@@ -73,8 +73,9 @@ test:
 # the values provided in this file. Alternatively, you can specify a connection
 # URL environment variable explicitly:
 #
-  # production:
-  #   url: <%= ENV["MY_APP_DATABASE_URL"] %>
+production:
+  <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
@@ -85,11 +86,11 @@ test:
 #   username: jorgepadilla
 #   password: <%= ENV["BLUE_SHARK_RAILS_DATABASE_PASSWORD"] %>
 
-production:
-  <<: *default
-  database: d4pkdc1u7jmbsl
-  username: turgnctqvqmirh
-  password: af1b3195bd94ec89f09164e2094507173fdee0d41ca82191e460374ed6d6207b
-  host: ec2-34-207-12-160.compute-1.amazonaws.com
-  port: 5432
+# production:
+#   <<: *default
+#   database: d4pkdc1u7jmbsl
+#   username: turgnctqvqmirh
+#   password: af1b3195bd94ec89f09164e2094507173fdee0d41ca82191e460374ed6d6207b
+#   host: ec2-34-207-12-160.compute-1.amazonaws.com
+#   port: 5432
 
