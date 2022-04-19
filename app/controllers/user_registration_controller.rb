@@ -15,7 +15,18 @@ class UserRegistrationController < ApplicationController
       flash.now[:alert] = "Registration failed"
       render :new
     end
+  end
 
+  def register
+    @user = User.create(user_params)
+    @user.profile = Patient.new
+    if @user.save
+      auto_login(@user)
+      redirect_to dashboard_path, notice: "You successfully register"
+    else
+      flash.now[:alert] = "Registration failed"
+      render :new
+    end
   end
 
   private
