@@ -7,6 +7,7 @@ class UserRegistrationController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    binding.irb
     @user.profile = Patient.new
     if @user.save
       auto_login(@user)
