@@ -3,6 +3,9 @@ class UserRegistrationController < ApplicationController
   
   def new
     @user = User.new
+    @patient = Patient.new
+    @user.profile = Patient.new
+    @user
   end
 
   def create
