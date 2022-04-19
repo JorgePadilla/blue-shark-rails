@@ -40,10 +40,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_18_074111) do
     t.string "email", null: false
     t.string "crypted_password"
     t.string "salt"
+    t.string "profile_type"
+    t.bigint "profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "profile_type", null: false
-    t.bigint "profile_id", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["profile_type", "profile_id"], name: "index_users_on_profile"
   end
