@@ -1,12 +1,12 @@
 <div id="<%= dom_id patient %>">
   <p>
     <strong>First name:</strong>
-    <%= patient.first_name %>
+    <%= t(patient.first_name) %>
   </p>
 
   <p>
     <strong>Second name:</strong>
-    <%= patient.second_name %>
+    <%= t(patient.second_name) %>
   </p>
 
   <p>
@@ -25,7 +25,7 @@
   </p>
 
   <p>
-    <strong>Gender:</strong>
+    <strong><%=t :Gender %>:</strong>
     <%= patient.gender %>
   </p>
 
