@@ -1,4 +1,6 @@
-<div id="<%= dom_id patient %>">
+<%
+=begin%>
+ <div id="<%= dom_id patient %>">
   <p>
     <strong>First name:</strong>
     <%= patient.first_name %>
@@ -35,7 +37,7 @@
   </p>
 
   <p>
-    <strong>Dni:</strong>
+    <strong>DNI:</strong>
     <%= patient.DNI %>
   </p>
 
@@ -84,4 +86,21 @@
     <%= patient.find_method %>
   </p>
 
-</div>
+</div> 
+<%
+=end%>
+
+<tr>
+<td><%=patient.first_name%></td>
+<td><%=patient.second_name%></td>
+<td><%=patient.last_name%></td>
+<td><%=patient.second_last_name%></td>
+<td><%=patient.prefer_name%></td>
+<td><%=patient.gender%></td>
+<td><%=patient.date_of_birth%></td>
+<td><%=patient.DNI%></td>
+<td><%=patient.nationality%></td>
+<td> <%= link_to "Show this patient", patient %></td>
+
+</tr>
+   

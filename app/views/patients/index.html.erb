@@ -3,12 +3,33 @@
 <h1>Patients</h1>
 
 <div id="patients">
+ <tbody>
+ <table class="table">
+  <thead class="thead-dark">
+     <tr>
+      <th scope="col">First name</th>
+      <th scope="col">Second name</th>
+      <th scope="col">Last name</th>
+      <th scope="col">Second last name</th>
+      <th scope="col">Prefer name</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Date of birth</th>
+      <th scope="col">DNI</th>
+      <th scope="col">Nationality</th>
+    </tr>
+    </thead>
   <% @patients.each do |patient| %>
     <%= render patient %>
     <p>
-      <%= link_to "Show this patient", patient %>
+      <%
+=begin%>
+ <%= link_to "Show this patient", patient %> 
+<%
+=end%>
     </p>
   <% end %>
+ </tbody>
+ </table>
 </div>
 
 <%= link_to "New patient", new_patient_path %>
