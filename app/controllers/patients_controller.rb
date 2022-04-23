@@ -22,7 +22,7 @@ class PatientsController < ApplicationController
   # POST /patients or /patients.json
   def create
     @patient = Patient.new(patient_params)
-
+    @patient.age = get_age(patient_params[:date_of_birth].to_date)
     respond_to do |format|
       if @patient.save
         format.html { redirect_to patient_url(@patient), notice: "Patient was successfully created." }
@@ -66,5 +66,10 @@ class PatientsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def patient_params
       params.require(:patient).permit(:first_name, :second_name, :last_name, :second_last_name, :prefer_name, :gender, :date_of_birth, :DNI, :nationality, :person_in_charge, :relationship, :address, :landline, :mobile, :email, :email_notification, :find_method)
+    end
+
+    def get_age(dob)
+      now = Time.now.utc.to_date
+      now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
     end
 end
