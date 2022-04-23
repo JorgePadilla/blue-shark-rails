@@ -22,7 +22,11 @@ class PatientsController < ApplicationController
   # POST /patients or /patients.json
   def create
     @patient = Patient.new(patient_params)
-    @patient.age = get_age(patient_params[:date_of_birth].to_date)
+    begin
+      @patient.age = get_age(patient_params[:date_of_birth].to_date)
+    rescue StandardError => e
+      puts "Rescued: #{e.inspect}"
+    end
     respond_to do |format|
       if @patient.save
         format.html { redirect_to patient_url(@patient), notice: "Patient was successfully created." }
