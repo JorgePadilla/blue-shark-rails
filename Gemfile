@@ -79,3 +79,5 @@ gem "sorcery", "~> 0.16.3"
 gem "rspec-rails", "~> 5.1"
 
 gem "importmap-rails", "~> 1.0"
+
+gem "country_select", "~> 7.0"
