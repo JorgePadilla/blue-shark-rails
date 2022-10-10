@@ -77,7 +77,6 @@ end
 
 gem "sorcery", "~> 0.16.3"
 
-gem "rspec-rails", "~> 5.1"
 
 gem "importmap-rails", "~> 1.0"
 

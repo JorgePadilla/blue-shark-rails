@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :doctors
+  resources :appointments
   resources :patients
   get 'register', to: 'user_registration#new'
   post "register/user", to: 'user_registration#create'

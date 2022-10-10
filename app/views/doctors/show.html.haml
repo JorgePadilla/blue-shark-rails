@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @doctor.first_name
+%p
+  %b Second name:
+  = @doctor.second_name
+%p
+  %b Last name:
+  = @doctor.last_name
+%p
+  %b Second last name:
+  = @doctor.second_last_name
+%p
+  %b Mobile:
+  = @doctor.mobile
+%p
+  %b Email:
+  = @doctor.email
+%p
+  %b Specialty:
+  = @doctor.specialty
+%p
+  %b College number:
+  = @doctor.college_number
+
+= link_to 'Edit', edit_doctor_path(@doctor)
+\|
+= link_to 'Back', doctors_path

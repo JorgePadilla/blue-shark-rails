@@ -10,12 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_10_190910) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_10_240260) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "appointment_statuses", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "appointment_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "appointments", force: :cascade do |t|
+    t.datetime "date"
+    t.bigint "patient_id", null: false
+    t.bigint "doctor_id", null: false
+    t.bigint "appointment_type_id", null: false
+    t.bigint "appointment_status_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["appointment_status_id"], name: "index_appointments_on_appointment_status_id"
+    t.index ["appointment_type_id"], name: "index_appointments_on_appointment_type_id"
+    t.index ["doctor_id"], name: "index_appointments_on_doctor_id"
+    t.index ["patient_id"], name: "index_appointments_on_patient_id"
+  end
+
+  create_table "doctors", force: :cascade do |t|
+    t.string "first_name"
+    t.string "second_name"
+    t.string "last_name"
+    t.string "second_last_name"
+    t.integer "mobile"
+    t.string "email"
+    t.string "specialty"
+    t.integer "college_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -55,4 +88,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_10_190910) do
     t.index ["profile_type", "profile_id"], name: "index_users_on_profile"
   end
 
+  add_foreign_key "appointments", "appointment_statuses"
+  add_foreign_key "appointments", "appointment_types"
+  add_foreign_key "appointments", "doctors"
+  add_foreign_key "appointments", "patients"
 end
