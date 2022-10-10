@@ -1,0 +1,18 @@
+%p{:style => "color: green"}= notice
+%h1 Patients
+#patients
+  %tbody
+    %table.table
+      %thead.thead-dark
+        %tr
+          %th{:scope => "col"} First name
+          %th{:scope => "col"} Last name
+          %th{:scope => "col"} Gender
+          %th{:scope => "col"} Age
+          %th{:scope => "col"} DNI
+          %th{:scope => "col"} Nationality
+          %th{:scope => "col"} Email
+          %th{:scope => "col"} Landline
+      - @patients.each do |patient|
+        = render patient
+    = link_to "New patient", new_patient_path
