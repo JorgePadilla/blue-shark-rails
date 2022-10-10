@@ -1,21 +1,29 @@
-<h1 id="page-title">Register</h1>
-<%= form_with(model: @user, url: register_user_path, method: :post) do |f|%>
-  <div>
-    <%= f.label :email%>
-    <%= f.text_field :email %>
-  </div>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="card shadow-lg border-0 rounded-lg mt-5">
+          <h1 id="page-title">Register</h1>
+          <%= form_with(model: @user, url: register_user_path, method: :post) do |f|%>
+            <div class="form-outline mb-4">
+              <%= f.label :email %>
+              <%= f.text_field :email, class: 'form-control'%>
+            </div>
 
-  <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
+            <div class="form-outline mb-4">
+              <%= f.label :password %>
+              <%= f.password_field :password, class: 'form-control' %>
+            </div>
 
-  <div>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
+            <div class="form-outline mb-4">
+              <%= f.label :password_confirmation %>
+              <%= f.password_field :password_confirmation, class: 'form-control' %>
+            </div>
 
-  <div>
-    <%= f.submit "Create Account", id: "submit-register-user" %>
+            <div class="form-outline mb-4">
+              <%= f.submit "Create Account", id: "submit-register-user", class: 'btn btn-primary btn-block mb-4' %>
+            </div>
+          <%end%>
+        </div>
+      </div>
   </div>
-<%end%>
+</body>
