@@ -1,3 +1,5 @@
+%script{:src => "https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"}
+%link{:href => "https://cdn.jsdelivr.net/combine/npm/fullcalendar@5.11.3/main.min.css,npm/fullcalendar@5.11.3/main.min.css", :rel => "stylesheet"}/
 %h1 Listing appointments
 
 %table
@@ -27,3 +29,5 @@
 %br
 
 = link_to 'New Appointment', new_appointment_path
+%div.m-4
+  #calendar
