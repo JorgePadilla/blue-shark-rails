@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post 'login' => "user_sessions#create"
   root "home#show"
   delete 'logout', to: 'user_sessions#destroy', as: :logout
+  get "/events", to: "appointments#events_json"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

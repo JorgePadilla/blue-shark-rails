@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
           center: 'title',
           right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
-        events: '/mc',
+        events: '/events',
         eventColor: '#378006'
       });
     

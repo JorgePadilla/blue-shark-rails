@@ -9,6 +9,8 @@
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
     = javascript_importmap_tags
+    %script{:src => "https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"}
+    %link{:href => "https://cdn.jsdelivr.net/combine/npm/fullcalendar@5.11.3/main.min.css,npm/fullcalendar@5.11.3/main.min.css", :rel => "stylesheet"}
   %body
     = render 'shared/navbar'
     = yield

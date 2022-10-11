@@ -57,6 +57,19 @@ class AppointmentsController < ApplicationController
     end
   end
 
+  def events_json
+    events = []
+    @appointments = Appointment.all
+    @appointments.each do |a| 
+        events << {
+          title: 'test',
+          start: Time.current.strftime('%F').to_s,
+          color: 'green' 
+        }
+    end
+    render plain: events.to_json
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_appointment
