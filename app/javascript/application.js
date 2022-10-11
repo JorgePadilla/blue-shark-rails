@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
     var calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
-        initialDate: '2022-02-01',
+        initialDate: '2022-10-10',
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
